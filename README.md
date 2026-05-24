@@ -1,13 +1,19 @@
 # Intergrated-Tasks-Analytics-System
-A data-driven personal and project management system with automated KPIs, task tracking, and integrations with Google Calendar and GitHub. Built as a portfolio demonstration of advanced Google Sheets and data analytics skills.
+A data-driven personal and project management system with automated KPIs, task tracking,
+and integrations with Google Calendar and GitHub. 
+Built as a portfolio demonstration of advanced Google Sheets and data analytics skills.
 ```
 ## Mission Statement
 
-To create a scalable, data-driven personal and project management system that tracks tasks, measures productivity through KPIs, integrates with external tools like Google Calendar and GitHub, and serves as a portfolio demonstration of advanced Google Sheets and data analytics skills.
+To create a scalable, data-driven personal and project management system that tracks tasks,
+measures productivity through KPIs, integrates with external tools like Google Calendar and GitHub,
+and serves as a portfolio demonstration of advanced Google Sheets and data analytics skills.
 
 ## Problem Statement
 
-Manual task tracking is fragmented across multiple tools. There's no single source of truth for task status, time spent, deadlines, and productivity metrics. This wastes time switching between apps and loses insight into personal and project performance.
+Manual task tracking is fragmented across multiple tools. There's no single source of truth for task status,
+time spent, deadlines, and productivity metrics. This wastes time switching between apps and loses insight
+into personal and project performance.
 
 ## Success Criteria
 
