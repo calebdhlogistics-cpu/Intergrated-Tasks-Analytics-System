@@ -1,37 +1,88 @@
-Original Sheet 1 Structure
-[View the live Google Sheet here] (https://docs.google.com/spreadsheets/d/1LqhETkG8e6kEHTJIhSYnzvjWfyH5cplcZrpqmlW9m4U/edit?usp=sharing)
+# Version 1 — Original Sheet Structure
 
-Overview
-In this section, we document the original prototype of the task management system. The goal was to build a functional, data-driven personal productivity tracker that could capture task details, automate date tracking, and calculate meaningful KPIs across 26 columns from A to Z.
+> *26 columns. Built iteratively. Every column earned its place.*
 
-The prototype was built iteratively, prioritizing functionality over architecture. Each column was added progressively as new requirements emerged, resulting in a system that works effectively as a standalone tracker but lacks the structured foundation needed for external integrations, team scalability, and long-term maintainability.
+[View the live Google Sheet here](https://docs.google.com/spreadsheets/d/1LqhETkG8e6kEHTJIhSYnzvjWfyH5cplcZrpqmlW9m4U/edit?usp=sharing)
 
-While the prototype successfully demonstrated the core concept — automated task tracking, real-time KPI calculation, and performance monitoring — it highlighted the importance of planning architecture before building. This documentation serves as both a record of what was built and the foundation for understanding why a redesign was necessary.
+---
 
-Column Breakdown
-Column A: Checkbox — Task completion checkbox
-Column B: Task ID — Auto-generated unique identifier
-Column C: Task Name — Description of the task
-Column D: Category — Task category (Study, Networking, Admin, Personal, Project, Work, House Work)
-Column E: Priority — Task priority level (High, Medium, Low)
-Column F: Status — Task status (Not Started, In Progress, Completed)
-Column G: Start Date — Auto-populated when status changes to In Progress
-Column H: Due Date — Manual input, deadline for task
-Column I: Completion Date — Auto-populated when status changes to Completed
-Column J: Duration in Hours — Calculated from start to completion date
-Column K: Duration in Minutes — Calculated from start to completion date
-Column L: Days Overdue / Status Alert — Shows overdue status with colour coding
-Column M: Priority Flag — Escalates high priority tasks that are overdue or due soon
-Column N: Completion Rate — Running percentage of completed tasks
-Column O: Workload by Category — Shows task count and percentage per category
-Column P: Weekly Task Count — Counts tasks started in current week
-Column Q: Monthly Task Count — Counts tasks completed in current month
-Column R: Estimated vs Actual Time — Compares estimated hours to actual duration
-Column S: Task Efficiency Score — Rates task completion quality (0-100 scale)
-Column T: Overdue Count by Category — Shows overdue tasks per category
-Column U: Average Completion Time by Category — Average hours per category
-Column V: Task Velocity — Tasks completed per week
-Column W: Deadline Adherence Rate — Percentage of on-time completions
-Column X: Overall Productivity Score — Composite score out of 100
-Column Y: Estimated Time in Hours — Manual input for estimated task duration
-Column Z: Estimated Time in Minutes — Auto-converted from column Y
+## Overview
+
+This document captures the original prototype of the task management system — built from scratch, column by column, as new requirements emerged from real usage.
+
+The goal was simple: a functional, data-driven personal productivity tracker that could capture task details, automate date tracking, and calculate meaningful KPIs. No templates. No shortcuts. Just building something real and learning as we went.
+
+The prototype was built iteratively — functionality first, architecture second. Each column was added as a new need surfaced, resulting in a system that worked effectively as a standalone tracker but wasn't built to scale, integrate with external tools, or support a team.
+
+What it did prove was the core concept — automated task tracking, real-time KPI calculation, and performance monitoring are all achievable inside Google Sheets.
+
+This document exists as a record of what was built and the foundation for understanding why a redesign became necessary.
+
+---
+
+## The 26 Columns — A to Z
+
+### Task Identity
+| Column | Name | Description |
+|--------|------|-------------|
+| A | Checkbox | Task completion checkbox — one click to mark done |
+| B | Task ID | Auto-generated unique identifier, categorised by type |
+| C | Task Name | Description of the task |
+| D | Category | Study, Networking, Admin, Personal, Project, Work, Housework |
+| E | Priority | High, Medium, Low |
+| F | Status | Not Started, In Progress, Completed |
+
+### Dates & Time Tracking
+| Column | Name | Description |
+|--------|------|-------------|
+| G | Start Date | Auto-populated when status changes to In Progress |
+| H | Due Date | Manual input — deadline for the task |
+| I | Completion Date | Auto-populated when status changes to Completed |
+| J | Duration in Hours | Calculated from start to completion date |
+| K | Duration in Minutes | Calculated from start to completion date |
+
+### Performance & Alerts
+| Column | Name | Description |
+|--------|------|-------------|
+| L | Days Overdue / Status Alert | Overdue status with colour coding |
+| M | Priority Flag | Escalates high priority tasks that are overdue or due soon |
+| N | Completion Rate | Running percentage of completed tasks |
+| O | Workload by Category | Task count and percentage per category |
+
+### Time Analysis
+| Column | Name | Description |
+|--------|------|-------------|
+| P | Weekly Task Count | Tasks started in the current week |
+| Q | Monthly Task Count | Tasks completed in the current month |
+| R | Estimated vs Actual Time | Compares estimated hours to actual duration |
+| S | Task Efficiency Score | Rates task completion quality on a 0–100 scale |
+| Y | Estimated Time in Hours | Manual input for estimated task duration |
+| Z | Estimated Time in Minutes | Auto-converted from Column Y |
+
+### Advanced KPIs
+| Column | Name | Description |
+|--------|------|-------------|
+| T | Overdue Count by Category | Overdue tasks broken down per category |
+| U | Average Completion Time by Category | Average hours to complete tasks per category |
+| V | Task Velocity | Tasks completed per week |
+| W | Deadline Adherence Rate | Percentage of on-time completions |
+| X | Overall Productivity Score | Composite productivity score out of 100 |
+
+---
+
+## What This Taught Us
+
+Building across 26 columns without a planned architecture worked — until it didn't.
+
+Every column made sense when it was added. But over time, the sheet became a single flat structure trying to do everything at once. No separation between raw data and calculated outputs. No clear flow. No room to grow.
+
+That's not a failure — that's exactly what a prototype is supposed to teach you.
+
+**The lesson: structure your data model before you build, not after.**
+
+Version 2 takes everything this sheet proved was possible and rebuilds it on a foundation designed to last.
+
+---
+
+*Every column in this sheet was earned through real usage — that's what makes it worth documenting.*
+
