@@ -59,7 +59,7 @@ Version 1 proved the concept works. The automations, the task ID logic, the KPI 
 
 But it also showed us exactly where the gaps were.
 
-**Version 2 builds on these lessons** — with better architecture, a cleaner structure, and a focus on what actually matters: connecting every task back to your goals.
+**Version 2 builds on these lessons** — with better architecture, a cleaner structure, and a focus on what actually matters: connecting every task back to your goals.“Because productivity isn’t just about tracking tasks — it’s about knowing that the work you’re doing is actually moving your life forward.”
 
 ---
 
