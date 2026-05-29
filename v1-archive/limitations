@@ -1,0 +1,20 @@
+1. Initial Design Limitations
+The original structure was a simple task tracker with basic automation (start/completion timestamps).
+We realized that the formula-based approach for calculating task durations was prone to rounding issues, especially when tasks were completed quickly.
+The initial task age metric (days only) didn't provide enough granularity for short tasks.
+2. Formula and Formatting Pitfalls
+Using mixed date and time formats caused discrepancies in task duration calculations.
+We initially rounded cycle time to whole minutes, which hid short task durations and caused confusion.
+We also realized that separating operational data (like raw task inputs) from calculated KPIs would simplify the structure.
+3. Refactoring Decisions
+After testing, we decided to separate raw task data from calculated metrics, making future dashboard building easier.
+We adopted a more structured layering approach: raw input sheet, automation script, and a separate analysis dashboard sheet.
+This refactor will ensure easier future maintenance and better scalability.
+4. Automation Challenges
+The Apps Script onEdit trigger worked, but it required careful column mapping to avoid misfires.
+We had to standardize status values (e.g., “Completed” vs “Complete”) to prevent script errors.
+In future iterations, we’ll implement error handling to ensure timestamps aren’t overwritten if a user edits the status multiple times.
+5. Next Steps
+Document the new architecture in a dedicated file.
+Begin building the GitHub repo with version history.
+Plan the next refactor to integrate with a dashboard and future automation.
