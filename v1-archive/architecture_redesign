@@ -1,1 +1,159 @@
+# Version 1 — Architectural Redesign
 
+> *We didn't scrap Version 1 because it failed. We redesigned it because we outgrew it.*
+
+---
+
+## Why a Redesign Was Necessary
+
+Version 1 proved the concept worked. Automations ran. KPIs calculated. Tasks were tracked.
+
+But as usage grew, one truth became impossible to ignore — the system was built around what we needed *that week*, not what we needed *long term*. Every new feature was bolted on top of the last one. The foundation wasn't designed to carry the weight we were putting on it.
+
+There was no separation between data and logic. No room for external integrations. No way to scale without rebuilding anyway.
+
+So instead of patching a system that was structurally limited, we made the decision to redesign from the ground up — keeping everything we learned, throwing away everything that was holding us back.
+
+---
+
+## What Changed and Why
+
+### From One Sheet to Layered Architecture
+
+**Before:** Everything lived on one sheet. Raw inputs, calculated KPIs, automation outputs — all mixed together in 26 columns.
+
+**After:** Three distinct layers, each with a single responsibility.
+
+```
+Layer 1 — Data Input
+Raw task data only. No calculations. No formatting logic.
+This is the single source of truth.
+
+Layer 2 — Automation Engine
+Google Apps Script handles all logic.
+Timestamps, status triggers, ID generation, validation.
+Nothing runs manually.
+
+Layer 3 — Dashboard & Analytics
+Pulls from Layer 1. Displays KPIs, charts, and insights.
+Never touches raw data directly.
+```
+
+**Why this matters:** When each layer does one job, fixing a bug doesn't break everything else. Adding a new feature means extending one layer, not rewriting three.
+
+---
+
+### From Flat Columns to Structured Data Model
+
+**Before:** Columns were added as needs emerged. No planned structure. Mixed data types in the same rows.
+
+**After:** Data model planned before a single formula was written.
+
+```
+Core Task Fields (Identity)
+├── Task ID (auto-generated, category-coded)
+├── Task Name
+├── Category
+├── Priority
+└── Status
+
+Time Fields (Tracking)
+├── Start Date (auto-populated)
+├── Due Date (manual)
+└── Completion Date (locked once set)
+
+Performance Fields (Measurement)
+├── Duration
+├── Estimated vs Actual
+├── Efficiency Score
+└── Overdue Status
+
+Goal Alignment Fields (NEW in V2)
+├── Linked Goal
+├── Mind Map Category
+└── Progress Toward Goal
+```
+
+**Why this matters:** A planned data model means every field has a purpose. Nothing is duplicated. Everything connects.
+
+---
+
+### From Fragile Triggers to Reliable Automation
+
+**Before:** `onEdit` triggers with no error handling. Status values typed manually. Timestamps overwritten on re-edits.
+
+**After:** Automation built to handle real human behaviour.
+
+- Status values controlled by dropdowns — no typos, no silent failures
+- Completion timestamps locked after first write — re-opening a task preserves history
+- Error handling built into every script from the start
+- Automations tested against edge cases, not just ideal paths
+
+---
+
+### From Standalone Tracker to Goal-Connected System
+
+**Before:** Tasks existed in isolation. No connection to bigger goals. Busy but not necessarily productive.
+
+**After:** Every task connects back to a goal through the mind map structure.
+
+```
+Your Goal
+    └── Category
+          └── Subcategory
+                └── Task
+```
+
+This means every completed task shows visible progress toward something that actually matters. Not just a checkbox. A step forward.
+
+---
+
+## The New Architecture at a Glance
+
+```
+Focus Hub V2 Architecture
+│
+├── SETUP LAYER
+│   └── Goals, categories, mind map structure
+│
+├── DATA LAYER
+│   └── Master task database (single source of truth)
+│
+├── AUTOMATION LAYER
+│   └── Google Apps Script
+│       ├── Auto-timestamps
+│       ├── Task ID generation
+│       ├── Status triggers
+│       └── Priority calculations
+│
+├── ANALYTICS LAYER
+│   └── KPIs, charts, performance trends
+│
+└── DASHBOARD LAYER
+    └── Unified view — priorities, progress, today's focus
+```
+
+---
+
+## What We Kept From Version 1
+
+Not everything was thrown away. These core concepts carried forward into Version 2:
+
+- **Auto-generated task IDs** — categorised, unique, reliable
+- **Status-based timestamps** — start date and completion date automation
+- **KPI framework** — completion rate, efficiency score, workload by category
+- **Colour-coded priority flags** — visual alerts for overdue and critical tasks
+
+The logic was sound. The structure just needed rebuilding around it.
+
+---
+
+## Closing Thought
+
+The best architects aren't the ones who never make mistakes. They're the ones who look at what they built, understand exactly why it needs to change, and rebuild it better.
+
+Version 1 was the draft. Version 2 is the real thing.
+
+---
+
+*Good architecture isn't about being clever. It's about being honest about what your system actually needs to do.*
